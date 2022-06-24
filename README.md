@@ -1,26 +1,62 @@
-# vue3-starter-template
+# Vue 3, TypeScript & Tailwind CSS Starter
 
-This template should help get you started developing with Vue 3.
+> A simple, Vue 3 starter with TypeScript support
 
-##### Stack
-- Vue3
-- TailwindCSS
-- Axios
+[Demo/Installation](https://vue3-typescript-tailwind-starter.vercel.app/)
 
-## Project Setup
+## Features
 
-```sh
+- Vue 3
+- TypeScript
+- Tailwind CSS
+- Simple store with global state
+- Vue Router
+- ESLint
+
+## Project setup and usage
+
+Install dependencies:
+
+```
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Run development server:
 
-```sh
+```
 npm run dev
 ```
 
-### Compile and Minify for Production
+Build for produciton:
 
-```sh
+```
 npm run build
 ```
+
+Run ESLint:
+
+```
+npm run lint
+```
+
+Lint and fix:
+
+```
+npm run lint:fix
+```
+
+## Contributing
+
+Contributions, feedback and issues are welcome. Feel free to fork, comment, critique, or submit a pull request.
+
+## Acknowledgements
+
+This repo was adapted from [Unihen](https://twitter.com/uninen)'s [vite-ts-tailwind-starter](https://github.com/Uninen/vite-ts-tailwind-starter) project.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Follow [@vincentdoerig](https://twitter.com/vincentdoerig) on Twitter.
