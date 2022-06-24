@@ -4,7 +4,7 @@ import Dashboard from './views/Dashboard.vue'
 import NotFound from './views/NotFound.vue'
 
 export const routes = [
-  { path: '/', component: Home, meta: { title: 'Home' } },
+  { path: '/', component: Home, name: 'home', meta: { title: 'Home' } },
   { path: '/login', component: Login, meta: { title: 'Login' } },
   { path: '/dashboard', component: Dashboard, meta: { title: 'Dashboard' } },
   {

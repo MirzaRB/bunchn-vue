@@ -4,16 +4,16 @@
       buttonClasses,
       type === 'pill-bordered' ? pillBorderedClasses : '',
       type === 'fill-rounded' ? fillRoundedClasses : '',
+      extraClasses ? extraClasses : ''
     ]"
     @click="$emit('on-press')"
   >
-    <img v-if="icon ? true : false" :src="icon" />
     {{ title }}
   </button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   components: {},
@@ -26,19 +26,20 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    icon: {
-      type: HTMLImageElement,
+    extraClasses: {
+      type: String,
       required: false,
+      default: '',
     },
   },
-  emits: ["on-press"],
+  emits: ['on-press'],
   data() {
     return {
       buttonClasses:
-        "flex items-center m-0 px-10 py-2 text-lg text-center font-bold",
-      pillBorderedClasses: "rounded-full border border-black border-solid",
-      fillRoundedClasses: "rounded-lg",
-    };
+        'flex items-center m-0 px-10 py-2 text-lg text-center font-bold',
+      pillBorderedClasses: 'rounded-full border border-black border-solid',
+      fillRoundedClasses: 'rounded-lg',
+    }
   },
-});
+})
 </script>

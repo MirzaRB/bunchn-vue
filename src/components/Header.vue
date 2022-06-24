@@ -1,6 +1,9 @@
 <template>
   <header class="w-full max-w-5xl mx-auto flex justify-between bg-white px-8 py-6 rounded-bl-3xl rounded-br-3xl absolute left-2/4">
-    <router-link to="/" class="w-32">
+    <router-link
+      to="/"
+      class="w-32"
+    >
       <img
         :src="logo"
         alt="site-logo"
