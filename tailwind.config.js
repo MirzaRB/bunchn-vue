@@ -13,6 +13,11 @@ module.exports = {
         primary: '#0E0606',
         secondary: '#319D8F',
         grey: '#F3F4F8',
+        'input-border': '#DADBDB',
+      },
+      spacing: {
+        'neg-1/2': '-50%',
+        'neg-10px': '-10px',
       },
       backgroundImage: {
         'hero-background': 'url(\'./src/assets/hero.png\')',
