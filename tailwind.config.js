@@ -23,7 +23,10 @@ module.exports = {
         'hero-background': 'url(\'./src/assets/hero.png\')',
       },
       maxWidth: {
-        'xs': '210px',
+        xs: '210px',
+      },
+      boxShadow: {
+        card: 'rgba(149, 157, 165, 0.2) 0px 8px 24px;',
       },
     },
   },
