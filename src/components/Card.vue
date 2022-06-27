@@ -16,7 +16,7 @@ export default defineComponent({
     data() {
         return {
             radius: `${this.rRadius && 'rounded-r-3xl'} ${this.lRadius && 'rounded-l-3xl'}`,
-            cardClass: 'w-1/2 overflow-hidden shadow-card p-8 bg-white mx-auto',
+            cardClass: 'w-full overflow-hidden shadow-card p-8 bg-white mx-auto',
         }
     },
 })
