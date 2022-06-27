@@ -2,12 +2,13 @@
   <div class="w-full relative">
     <p
       v-if="label"
-      class="bg-white text-base font-normal font-mont mb-neg-10px ml-3 relative max-w-fit px-3"
+      class="bg-white text-base font-normal  mb-neg-10px ml-3 relative max-w-fit px-3"
     >
       {{ label }}
     </p>
     <input
       :type="inputType"
+      :placeholder="placeHolder"
       class="w-full border-2 border-input-border border-solid rounded-lg px-2.5 py-3 text-primary font-normal font-sm"
       @input="(event) => (value = e.target.value)"
     >
@@ -40,6 +41,11 @@ export default defineComponent({
     inputType: {
       type: String,
       required: true,
+    },
+    placeHolder: {
+      type: String,
+      required: false,
+      default:'',
     },
     disableIcon: {
       type: Boolean,
