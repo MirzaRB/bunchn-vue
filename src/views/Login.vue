@@ -1,16 +1,19 @@
 <template>
-  <div class="flex h-screen ">
-    <div class="hidden sm:inline-flex w-3/5 ">
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/nqye02H_H6I?controls=0"
+  <div class="flex h-screen">
+    <div class="hidden sm:inline-flex w-3/5">
+      <Video
+        :video-src="Video1"
+        :is-play="isPlay"
+        @on-play="playVideo"
+        @on-pause="pauseVideo"
       />
     </div>
-    <div class="bg-white w-full sm:w-2/5 flex justify-center items-center relative">
+    <div
+      class="bg-white w-full sm:w-2/5 flex justify-center items-center relative"
+    >
       <Card
         l-radius
-        class=" p-0 md:p-2 sm:absolute sm:right-0 w-100% sm:w-[107%] md:w-[105%]  bg-white w-screen h-screen flex flex-col justify-center items-center"
+        class="p-0 md:p-2 sm:absolute sm:right-0 w-100% sm:w-[107%] md:w-[105%] bg-white w-screen h-screen flex flex-col justify-center items-center"
       >
         <div class="flex flex-col items-start gap-5 w-3/4 relative">
           <img
@@ -18,7 +21,7 @@
             alt="logo"
             class="sm:3/5 md:w-2/5"
           >
-          <div class="text-3xl sm:text-3xl  lg:text-4xl font-bold">
+          <div class="text-3xl sm:text-3xl lg:text-4xl font-bold">
             Business <span class="text-secondary">Login</span>
           </div>
           <div class="border-2 border-solid border-secondary rounded w-16" />
@@ -55,18 +58,30 @@ import logo from '../assets/logo.svg'
 import Input from '../components/Input.vue'
 import Card from '../components/Card.vue'
 import Button from '../components/Button.vue'
+import Video from '../components/Video.vue'
+import Video1 from '../assets/video1.mp4'
 
 export default defineComponent({
   components: {
     Input,
     Button,
     Card,
+    Video,
   },
-  data(){
-    return{
+  data() {
+    return {
       logo,
-      
+      Video1,
+      isPlay: false,
     }
+  },
+  methods: {
+    playVideo() {
+      this.isPlay = true
+    },
+    pauseVideo() {
+      this.isPlay = false
+    },
   },
 })
 </script>
