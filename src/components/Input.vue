@@ -2,7 +2,7 @@
   <div class="w-full relative">
     <p
       v-if="label"
-      class="bg-white text-base font-normal  mb-neg-10px ml-3 relative max-w-fit px-3"
+      class="bg-white text-base font-mont font-normal mb-neg-10px ml-3 relative max-w-fit px-3"
     >
       {{ label }}
     </p>
@@ -10,7 +10,6 @@
       :type="inputType"
       :placeholder="placeHolder"
       class="w-full border-2 border-input-border border-solid rounded-lg px-2.5 py-3 text-primary font-normal font-sm"
-      @input="(event) => (value = e.target.value)"
     >
     <div
       v-if="iconVisibility"
@@ -45,7 +44,7 @@ export default defineComponent({
     placeHolder: {
       type: String,
       required: false,
-      default:'',
+      default: '',
     },
     disableIcon: {
       type: Boolean,
@@ -55,7 +54,6 @@ export default defineComponent({
   },
   data() {
     return {
-      value: '',
       userIcon,
       passwordIcon,
     }
@@ -67,7 +65,7 @@ export default defineComponent({
         : passwordIcon
     },
     iconVisibility() {
-        return this.disableIcon ? false : true
+      return this.disableIcon ? false : true
     },
   },
 })
