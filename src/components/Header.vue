@@ -1,29 +1,54 @@
 <template>
-  <header class="w-full max-w-5xl mx-auto flex justify-between bg-white px-8 py-6 rounded-bl-3xl rounded-br-3xl absolute left-2/4">
+  <header
+    :class="[generateHeaderClasses]"
+    :style="{ transform: isWhiteHeader ? 'translateX(-50%)' : '' }"
+  >
     <router-link
       to="/"
       class="w-32"
     >
       <img
-        :src="logo"
+        :src="isWhiteHeader ? logo : logoWhite"
         alt="site-logo"
       >
     </router-link>
-    <div class="flex items-center">
+    <div
+      v-if="isWhiteHeader"
+      class="flex items-center"
+    >
       <router-link
         to="/"
         class="text-base font-semibold mr-5"
       >
         Business account?
       </router-link>
+      <router-link to="/login">
+        <Button
+          title="Log In"
+          type="pill-bordered"
+        />
+      </router-link>
+    </div>
+    <div
+      v-else
+      class="flex items-center"
+    >
       <router-link
-        to="/login"
-        class="text-lg mr-5"
+        to="/dashboard"
+        class="mr-5"
       >
         <Button
-          title="login"
-          type="pill-bordered"
-          @on-press="login"
+          title="Dashboard"
+          type="primary-bordered"
+        />
+      </router-link>
+      <router-link
+        to="/login"
+        class="mr-5"
+      >
+        <Button
+          title="Log Out"
+          type="secondary"
         />
       </router-link>
     </div>
@@ -36,26 +61,30 @@ import { defineComponent } from 'vue'
 import Button from './Button.vue'
 
 import logo from '../assets/logo.svg'
+import logoWhite from '../assets/logo-white.svg'
 
 export default defineComponent({
   components: {
-      Button,
+    Button,
   },
   data: () => {
-      return {
-        logo,
+    return {
+      logo,
+      logoWhite,
     }
   },
-  methods: {
-      login() {
-          javascript:void(0)
-      },
+  computed: {
+    isWhiteHeader() {
+      return this.$route.fullPath === '/' ? true : false
+    },
+    generateHeaderClasses() {
+      let headerClasses =
+        'w-full flex justify-between px-8 py-6 rounded-bl-3xl rounded-br-3xl'
+      this.$route.fullPath === '/'
+        ? (headerClasses += ' max-w-5xl mx-auto bg-white absolute left-2/4')
+        : (headerClasses += ' max-w-none bg-black')
+      return headerClasses
+    },
   },
 })
 </script>
-
-<style scoped>
-    header {
-        transform: translateX(-50%);
-    }
-</style>

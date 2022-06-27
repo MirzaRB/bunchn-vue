@@ -32,8 +32,8 @@
           />
           <Button
             title="Login"
-            type="fill-bordered"
-            extra-classes="bg-secondary text-white w-full justify-center rounded"
+            type="secondary"
+            extra-classes="w-full rounded"
           />
           <div class="flex justify-center  w-full sm:absolute sm:-bottom-20 md:-bottom-28 lg:-bottom-32 xl:-bottom-40">
             <div class="text-xs md:text-xs xl:text-base">

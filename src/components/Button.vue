@@ -3,7 +3,8 @@
     :class="[
       buttonClasses,
       type === 'pill-bordered' ? pillBorderedClasses : '',
-      type === 'fill-rounded' ? fillRoundedClasses : '',
+      type === 'secondary' ? secondaryClasses : '',
+      type === 'primary-bordered' ? primaryBorderedClasses : '',
       extraClasses ? extraClasses : ''
     ]"
     @click="$emit('on-press')"
@@ -36,9 +37,10 @@ export default defineComponent({
   data() {
     return {
       buttonClasses:
-        'flex items-center m-0 px-10 py-2 text-lg text-center font-bold',
-      pillBorderedClasses: 'rounded-full border border-black border-solid',
-      fillRoundedClasses: 'rounded-lg',
+        'm-0 px-10 py-2 text-center border-solid',
+      pillBorderedClasses: 'rounded-full border border-black font-bold text-lg',
+      primaryBorderedClasses: 'rounded-lg bg-primary text-white text-base font-medium border border-white',
+      secondaryClasses: 'rounded-lg bg-secondary text-white text-base font-medium',
     }
   },
 })
