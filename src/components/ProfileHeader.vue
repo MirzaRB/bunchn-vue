@@ -19,8 +19,8 @@ export default defineComponent({
   },
   data() {
     return {
-      fontSize: 'text-4xl font-bold ',
-      borderClass: 'border-2 border-solid border-secondary rounded w-16 mt-3 ',
+      fontSize: 'text-3xl font-montBold ',
+      borderClass: 'border-t-4 border-solid border-secondary rounded w-16 mt-3 ',
     }
   },
 })
