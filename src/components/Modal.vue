@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       modal__content: 'modal__content',
-      tailwind__content: `rounded-3xl ${this.isSmall ? 'w-2/6' : 'w-5/6'}`,
+      tailwind__content: `rounded-3xl ${this.isSmall ? 'w-2/6' : 'w-3/4'}`,
     }
   },
 }
@@ -44,7 +44,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  /* padding: 50px; */
 }
 ::v-deep .modal-content {
   width: 100%;
@@ -52,7 +52,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 90%;
+  max-height: 70%;
   margin: 0 1rem;
   padding: 1rem;
   border-radius: 1.5rem;
