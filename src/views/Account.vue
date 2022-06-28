@@ -75,6 +75,7 @@
           title="Cancel"
           type="secondary"
           extra-classes="w-full rounded sm:py-4"
+          @on-press="$router.go(-1)"
         />
         <Button
           title="Save"
