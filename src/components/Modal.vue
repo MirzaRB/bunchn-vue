@@ -30,7 +30,10 @@ export default {
     props: {
         show: Boolean,
         isSmall: Boolean,
-        onclose: { type: Function },
+        onclose: {
+          type: Function,
+          required: true,
+        },
     },
     data() {
         return {

@@ -1,5 +1,9 @@
 <template>
-    <img :class="[avatarClass]" :src="src" alt="">
+  <img
+    :class="[avatarClass]"
+    :src="src"
+    alt="avatar"
+  >
 </template>
 
 <script lang="ts">
@@ -8,8 +12,14 @@ import { defineComponent } from 'vue'
 export default defineComponent({
     components: {},
     props: {
-        src: String,
-        size: String,
+        src: {
+          type: String,
+          required: true,
+        },
+        size: {
+          type: String,
+          required: true,
+        },
     },
     data() {
         return {
