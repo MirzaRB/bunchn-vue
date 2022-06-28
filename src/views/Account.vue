@@ -5,7 +5,7 @@
       r-radius
       class="w-3/4 p-16"
     >
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between ">
         <ProfileHeaderVue title="Account" />
         <div class="flex flex-col cursor-pointer">
           <Avatar 
@@ -73,7 +73,7 @@
       <div class="flex  gap-4 mt-8">
         <Button
           title="Cancel"
-          type="secondary"
+          type="secondary-bordered"
           extra-classes="w-full rounded sm:py-4"
           @on-press="$router.go(-1)"
         />

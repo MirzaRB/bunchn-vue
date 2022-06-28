@@ -5,8 +5,19 @@
       r-radius
       class="w-3/4 p-16"
     >
-      <ProfileHeaderVue title="Complete your Profile" />
-      <div class="flex flex-col sm:flex-row w-full gap-4 mt-8">
+      <div class="flex justify-between ">
+        <ProfileHeaderVue title="Complete your Profile" />
+        <div class="flex flex-col cursor-pointer">
+          <Avatar 
+            :src="User" 
+            size="lg"
+          />
+          <button class="text-secondary font-montBold">
+            Add Image
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row w-full gap-4 mt-4">
         <div class="flex-1 flex flex-col gap-4">
           <Input
             label="Email"
@@ -58,7 +69,7 @@
       </div>
       <div class="flex flex-col mt-8">
         <div class="flex justify-between items-center">
-          <h1 class="text-3xl font-montBold">
+          <h1 class="text-2xl font-montBold">
             Payment Information
           </h1>
           <img
@@ -88,7 +99,9 @@ import ProfileHeaderVue from '../components/ProfileHeader.vue'
 import Card from '../components/Card.vue'
 import Input from '../components/Input.vue'
 import Button from '../components/Button.vue'
+import Avatar from '../components/Avatar.vue'
 import AddNew from '../assets/add-new-btn.png'
+import User from '../assets/user.png'
 
 export default defineComponent({
   components: {
@@ -96,10 +109,12 @@ export default defineComponent({
     Card,
     Input,
     Button,
+    Avatar,
   },
   data(){
     return{
         AddNew,
+        User,
     }
   },
 })
