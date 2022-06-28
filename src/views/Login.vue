@@ -39,16 +39,30 @@
             extra-classes="w-full rounded"
             @on-press="logIn"
           />
-          <div class="flex justify-center  w-full sm:absolute sm:-bottom-20 md:-bottom-28 lg:-bottom-32 xl:-bottom-40">
+          <div
+            class="flex justify-center w-full sm:absolute sm:-bottom-20 md:-bottom-28 lg:-bottom-32 xl:-bottom-40"
+          >
             <div class="text-xs md:text-xs xl:text-base">
-              Don't have a business account? <a
-                href="#"
+              Don't have a business account?
+              <button
                 class="text-secondary font-medium"
-              >Request One</a>
+                @click="openModal"
+              >
+                Request One
+              </button>
             </div>
           </div>
         </div>
       </Card>
+    </div>
+    <div>
+      <Modal
+        :show="showModal"
+        :is-small="true"
+        :onclose="closeModal"
+      >
+        <h1>Hello</h1>
+      </Modal>
     </div>
   </div>
 </template>
@@ -64,6 +78,7 @@ import Card from '../components/Card.vue'
 import Button from '../components/Button.vue'
 import Video from '../components/Video.vue'
 import Video1 from '../assets/video1.mp4'
+import Modal from '../components/Modal.vue'
 
 export default defineComponent({
   components: {
@@ -71,6 +86,7 @@ export default defineComponent({
     Button,
     Card,
     Video,
+    Modal,
   },
   data() {
     return {
@@ -78,6 +94,7 @@ export default defineComponent({
       Video1,
       isPlay: false,
       globalState,
+      showModal: false,
     }
   },
   methods: {
@@ -90,6 +107,12 @@ export default defineComponent({
     logIn() {
       this.globalState.token = 'token'
       this.$router.push('/dashboard')
+    },
+    closeModal: function () {
+      this.showModal = false
+    },
+    openModal: function () {
+      this.showModal = true
     },
   },
 })
