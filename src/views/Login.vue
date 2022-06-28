@@ -58,10 +58,46 @@
     <div>
       <Modal
         :show="showModal"
-        :is-small="true"
+        :is-small="false"
         :onclose="closeModal"
       >
-        <h1>Hello</h1>
+        <ProfileHeader title="Request a Business Account" />
+        <div class="flex flex-col gap-4 mt-4">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Input 
+              label="Name"
+              place-holder="John Alam"
+              input-type="text"
+              disable-icon
+            />
+            <Input 
+              label="Business Name"
+              place-holder="ABC Tappal Business"
+              input-type="text"
+              disable-icon
+            />
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Input 
+              label="Phone"
+              place-holder="+1 234 53215245"
+              input-type="number"
+              disable-icon
+            />
+            <Input 
+              label="Email"
+              place-holder="info@example.cominfo@example.com"
+              input-type="text"
+              disable-icon
+            />
+          </div>
+          <Button
+            title="Save"
+            type="secondary"
+            extra-classes="rounded sm:py-4"
+            @on-press="saveData"
+          />
+        </div>
       </Modal>
     </div>
   </div>
@@ -73,12 +109,13 @@ import { defineComponent } from 'vue'
 import { globalState } from '../store'
 
 import logo from '../assets/logo.svg'
+import Video1 from '../assets/video1.mp4'
 import Input from '../components/Input.vue'
 import Card from '../components/Card.vue'
 import Button from '../components/Button.vue'
 import Video from '../components/Video.vue'
-import Video1 from '../assets/video1.mp4'
 import Modal from '../components/Modal.vue'
+import ProfileHeader from '../components/ProfileHeader.vue'
 
 export default defineComponent({
   components: {
@@ -87,6 +124,7 @@ export default defineComponent({
     Card,
     Video,
     Modal,
+    ProfileHeader,
   },
   data() {
     return {
@@ -113,6 +151,9 @@ export default defineComponent({
     },
     openModal: function () {
       this.showModal = true
+    },
+    saveData(){
+      this.closeModal()
     },
   },
 })
