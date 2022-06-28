@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-none min-h-screen min-w-full">
+  <div class="max-w-none min-h-screen min-w-full bg-white">
     <div class="h-screen min-h-half bg-hero-background bg-no-repeat bg-cover">
       <div class="w-full max-w-screen-md mx-auto absolute left-2/4 bottom-2/4 video-container">
         <iframe

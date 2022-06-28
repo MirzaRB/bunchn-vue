@@ -15,6 +15,7 @@ module.exports = {
         secondary: '#319D8F',
         grey: '#F3F4F8',
         'input-border': '#DADBDB',
+        'root-background': '#fcf6fc',
       },
       spacing: {
         'neg-1/2': '-50%',

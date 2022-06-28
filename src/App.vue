@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-white max-w-none min-h-screen relative">
+  <div class="w-full bg-root-background max-w-none min-h-screen relative">
     <Header v-if="isProtected" />
     <router-view />
   </div>
