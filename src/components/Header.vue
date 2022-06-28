@@ -22,7 +22,16 @@
       >
         Business account?
       </router-link>
-      <router-link to="/login">
+      <Button
+        v-if="globalState.token"
+        title="Log Out"
+        type="pill-bordered"
+        @on-press="logOut"
+      />
+      <router-link
+        v-else
+        to="/login"
+      >
         <Button
           title="Log In"
           type="pill-bordered"
@@ -49,6 +58,7 @@
         <Button
           title="Log Out"
           type="secondary"
+          @on-press="logOut"
         />
       </router-link>
     </div>
@@ -57,6 +67,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
+import { globalState } from '../store'
 
 import Button from './Button.vue'
 
@@ -71,6 +83,7 @@ export default defineComponent({
     return {
       logo,
       logoWhite,
+      globalState,
     }
   },
   computed: {
@@ -84,6 +97,12 @@ export default defineComponent({
         ? (headerClasses += ' max-w-5xl mx-auto bg-white absolute left-2/4')
         : (headerClasses += ' max-w-none bg-black')
       return headerClasses
+    },
+  },
+  methods: {
+    logOut() {
+      this.globalState.token = ''
+      this.$router.push('/login')
     },
   },
 })

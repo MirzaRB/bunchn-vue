@@ -4,6 +4,8 @@ import App from './App.vue'
 import { routes } from './routes'
 import './index.css'
 
+import { globalState } from './store'
+
 const app = createApp(App)
 
 const router = createRouter({
@@ -12,7 +14,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const token = ''
+  const { token } = globalState
 
   if (to.fullPath !== '/login' && to.fullPath !== '/') {
     if (!token) {

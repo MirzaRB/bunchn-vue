@@ -37,6 +37,7 @@
             title="Login"
             type="secondary"
             extra-classes="w-full rounded"
+            @on-press="logIn"
           />
           <div class="flex justify-center  w-full sm:absolute sm:-bottom-20 md:-bottom-28 lg:-bottom-32 xl:-bottom-40">
             <div class="text-xs md:text-xs xl:text-base">
@@ -54,6 +55,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
+import { globalState } from '../store'
+
 import logo from '../assets/logo.svg'
 import Input from '../components/Input.vue'
 import Card from '../components/Card.vue'
@@ -73,6 +77,7 @@ export default defineComponent({
       logo,
       Video1,
       isPlay: false,
+      globalState,
     }
   },
   methods: {
@@ -81,6 +86,10 @@ export default defineComponent({
     },
     pauseVideo() {
       this.isPlay = false
+    },
+    logIn() {
+      this.globalState.token = 'token'
+      this.$router.push('/dashboard')
     },
   },
 })
