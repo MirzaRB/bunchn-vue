@@ -106,7 +106,7 @@ export default defineComponent({
     },
     logIn() {
       this.globalState.token = 'token'
-      this.$router.push('/dashboard')
+      this.$router.push('/personal-information')
     },
     closeModal: function () {
       this.showModal = false

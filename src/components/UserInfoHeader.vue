@@ -14,9 +14,12 @@
           <p class="font-montBold font-black text-2xl">
             {{ data?.name }}
           </p>
-          <p class="font-mont text-md mt-2 cursor-pointer">
+          <router-link
+            to="/account"
+            class="font-mont text-md mt-2"
+          >
             Edit Account
-          </p>
+          </router-link>
           <p class="font-montBold cursor-pointer text-md text-secondary">
             View Stripe Account
           </p>
