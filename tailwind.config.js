@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         mont: ['Montserrat'],
+        montBold: ['Montserrat-Bold'],
       },
       colors: {
         primary: '#0E0606',

@@ -1,22 +1,25 @@
 <template>
-  <div class="max-w-none m-8 flex justify-between items-center">
-    <router-link
-      to="/"
-      class="text-large"
-    >
-      Back to Home
-    </router-link>
-    <h1 class="text-7xl text-center text-secondary font-extrabold">
-      Dashboard
-    </h1>
-    <div />
+  <div class="container mx-auto">
+    <UserInfoHeader :data="userInfo" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
+import UserInfoHeader from '../components/UserInfoHeader.vue'
 export default defineComponent({
-  components: {},
+  components: {
+    UserInfoHeader,
+  },
+  data() {
+    return {
+      userInfo: {
+        avatar: 'https://s3.amazonaws.com/kmpz-p/images/i509728-1383698697750786442.jpg',
+        name: 'Ronaldo John',
+        balance: '$340.50',
+        availableBalance: '$350.00',
+      },
+    }
+  },
 })
 </script>
