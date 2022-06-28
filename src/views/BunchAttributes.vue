@@ -1,9 +1,9 @@
 <template>
-  <div class="max-w-none py-28 flex justify-center items-center">
+  <div class="max-w-none py-16 flex justify-center items-center">
     <Card
-      lradius
-      rradius
-      class="w-4/5"
+      l-radius
+      r-radius
+      class="w-4/5 p-16"
     >
       <ProfileHeaderVue title="Bunch Attributes:" />
       <div class="flex flex-col sm:flex-row w-full gap-4 mt-8">
@@ -144,11 +144,11 @@
           />
         </div>
       </div>
-      <div class="mt-4">
+      <div class="mt-8">
         <Button
           title="Save"
           type="secondary"
-          extra-classes="w-full rounded"
+          extra-classes="w-full rounded py-4"
         />
       </div>
     </Card>
