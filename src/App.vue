@@ -1,5 +1,5 @@
 <template>
-  <div :class="[mainClass, bgClass]">
+  <div :class="[mainClass, 'bg-root-background']">
     <Header v-if="isProtected" />
     <router-view />
   </div>

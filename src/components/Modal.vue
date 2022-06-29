@@ -8,9 +8,10 @@
       @click-outside="onclose"
     >
       <div :class="[modal__content, tailwind__content]">
-        <Card
+        <Card 
           :r-radius="false"
           :l-radius="false"
+          class="p-12"
         >
           <slot />
         </Card>
@@ -44,7 +45,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 50px; */
 }
 ::v-deep .modal-content {
   width: 100%;

@@ -1,5 +1,8 @@
 <template>
-  <div class="w-full relative">
+  <div
+    class="w-full relative"
+    @click="$emit('on-click-input')"
+  >
     <p
       v-if="label"
       class="bg-white text-base font-mont font-normal mb-neg-10px ml-3 relative max-w-fit px-3"
@@ -52,6 +55,7 @@ export default defineComponent({
       default: false,
     },
   },
+  emits: ['on-click-input'],
   data() {
     return {
       userIcon,
