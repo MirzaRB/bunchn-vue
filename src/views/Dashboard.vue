@@ -1,14 +1,18 @@
 <template>
   <div class="container mx-auto">
     <UserInfoHeader :data="userInfo" />
-    <div class="mt-20 mb-7">
+    <div class="mt-20 mb-7 flex items-center">
       <Tabs
         :tabs="tabs" 
         :active="activeTab"
         @on-press-tab="selectActiveTab"
       />
+      <Button
+        title="+ Add"
+        type="secondary"
+      />
     </div>
-    <div class="mb-12">
+    <div class="pb-12">
       <Table      
         :heads="getTableHeads"
         :rows="getTableRows"
@@ -22,6 +26,7 @@ import { defineComponent } from 'vue'
 
 import UserInfoHeader from '../components/UserInfoHeader.vue'
 import Tabs from '../components/Tabs.vue'
+import Button from '../components/Button.vue'
 import Table from '../components/Table.vue'
 
 import { globalState } from '../store'
@@ -30,6 +35,7 @@ export default defineComponent({
   components: {
     UserInfoHeader,
     Tabs,
+    Button,
     Table,
   },
   data() {

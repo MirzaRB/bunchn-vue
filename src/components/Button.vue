@@ -40,7 +40,7 @@ export default defineComponent({
   data() {
     return {
       buttonClasses:
-        'm-0 px-10 py-2 text-center border-solid',
+        'm-0 px-10 py-2 text-center border-solid whitespace-nowrap',
       pillBorderedClasses: 'rounded-full border border-black font-bold text-lg',
       primaryBorderedClasses: 'rounded-lg bg-primary text-white text-base font-medium border border-white',
       tableBtnClasses: 'rounded-md bg-iconBtn text-secondary border border-secondary',

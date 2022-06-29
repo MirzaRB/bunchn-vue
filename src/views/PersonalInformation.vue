@@ -111,14 +111,16 @@
           :src="UploadImg"
           alt="img"
         >
-        <p class="text-3xl font-mont tracking-widest opacity-40 font-medium">Upload Image</p>
+        <p class="text-3xl font-mont tracking-widest opacity-40 font-medium">
+          Upload Image
+        </p>
       </div>
       <Button
-          title="Upload"
-          type="secondary"
-          extra-classes="w-full rounded py-4 mt-6"
-          @on-press="saveData('imgModal')"
-        />
+        title="Upload"
+        type="secondary"
+        extra-classes="w-full rounded py-4 mt-6"
+        @on-press="saveData('imgModal')"
+      />
     </Modal>
     <Modal
       :show="modals.locationModal"
