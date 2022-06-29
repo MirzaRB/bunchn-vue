@@ -26,21 +26,21 @@
             label="Email"
             input-type="email"
             place-holder="info@example.com"
-            disable-icon
+            :icon-src="emailIcon"
           />
           <Input
             label="User Name"
             input-type="text"
             place-holder="Jhon Doe"
-            disable-icon
+            :icon-src="userIcon"
+
           />
           <Input
             label="Bio"
             input-type="text"
-            place-holder="Lorem Ipsum is simply dummy text of the 
-            printing and typesetting Ipsum has been the 
-            industry's standard dummy."
-            disable-icon
+            place-holder="Lorem Ipsum is simply dummy text of the printing and typesetting Ipsum has been the industry's standard dummy."
+            :icon-src="bioIcon"
+
           />
         </div>
         <div class="flex-1 flex flex-col gap-4">
@@ -48,27 +48,27 @@
             label="Password"
             input-type="password"
             place-holder="Nx3219034@PSK"
-            disable-icon
+            :icon-src="passwordIcon"
             @on-click-input="changeModalState('passwordModal', true)"
           />
           <Input
             label="Business Name"
             input-type="text"
             place-holder="Dummy Bussness"
-            disable-icon
+            :icon-src="businessIcon"
           />
           <Input
             label="Location 1"
             input-type="text"
             place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016 "
-            disable-icon
+            :icon-src="locationIcon"
             @on-click-input="changeModalState('locationModal', true)"
           />
           <Input
             label="Location 2"
             input-type="text"
             place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016"
-            disable-icon
+            :icon-src="locationIcon"
             @on-click-input="changeModalState('locationModal', true)"
           />
         </div>
@@ -216,6 +216,12 @@ import Modal from '../components/Modal.vue'
 import AddNew from '../assets/add-new-btn.png'
 import UploadImg from '../assets/upload-img.png'
 import User from '../assets/user.png'
+import userIcon from '../assets/user-icon.svg'
+import passwordIcon from '../assets/password-icon.svg'
+import businessIcon from '../assets/businessIcon.png'
+import locationIcon from '../assets/locationIcon.png'
+import emailIcon from '../assets/emailIcon.png'
+import bioIcon from '../assets/bioIcon.png'
 
 export default defineComponent({
 
@@ -231,6 +237,12 @@ export default defineComponent({
   data() {
     return {
       AddNew,
+      userIcon,
+      passwordIcon,
+      businessIcon,
+      locationIcon,
+      emailIcon,
+      bioIcon,
       User,
       UploadImg,
       modals:  {

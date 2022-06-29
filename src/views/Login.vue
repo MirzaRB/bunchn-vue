@@ -28,10 +28,12 @@
           <Input
             label="User Name"
             input-type="text"
+            :icon-src="userIcon"
           />
           <Input
             label="Password"
             input-type="password"
+            :icon-src="passwordIcon"
           />
           <Button
             title="Login"
@@ -108,6 +110,8 @@ import { defineComponent } from 'vue'
 
 import { globalState } from '../store'
 
+import userIcon from '../assets/user-icon.svg'
+import passwordIcon from '../assets/password-icon.svg'
 import logo from '../assets/logo.svg'
 import Video1 from '../assets/video1.mp4'
 import Input from '../components/Input.vue'
@@ -116,6 +120,7 @@ import Button from '../components/Button.vue'
 import Video from '../components/Video.vue'
 import Modal from '../components/Modal.vue'
 import ProfileHeader from '../components/ProfileHeader.vue'
+
 
 export default defineComponent({
   components: {
@@ -130,6 +135,8 @@ export default defineComponent({
     return {
       logo,
       Video1,
+      userIcon,
+      passwordIcon,
       isPlay: false,
       globalState,
       showModal: false,

@@ -12,7 +12,7 @@
     <input
       :type="inputType"
       :placeholder="placeHolder"
-      class="w-full border-2 border-input-border border-solid rounded-lg px-2.5 py-3 text-primary font-normal font-sm"
+      class="w-full border-2 border-input-border border-solid rounded-lg pl-5 pr-10 py-3 text-primary font-normal font-sm"
     >
     <div
       v-if="iconVisibility"
@@ -20,7 +20,7 @@
     >
       <img
         class="w-4"
-        :src="renderIcon"
+        :src="iconSrc"
         alt="icon"
       >
     </div>
@@ -54,6 +54,11 @@ export default defineComponent({
       required: false,
       default: false,
     },
+    iconSrc:{
+      type:String,
+      required:false,
+      default:'',
+    }
   },
   emits: ['on-click-input'],
   data() {
