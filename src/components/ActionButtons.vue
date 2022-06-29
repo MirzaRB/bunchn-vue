@@ -26,15 +26,8 @@ import { defineComponent } from 'vue'
 import Button from './Button.vue'
 
 export default defineComponent({
-    components: {
-        Button,
-    },
-    props: {
-    },
-    data() {
-        return {
-
-        }
-    },
+  components: {
+    Button,
+  },
 })
 </script>

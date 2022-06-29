@@ -12,7 +12,10 @@
             :src="User"
             size="lg"
           />
-          <button class="text-secondary font-montBold">
+          <button 
+            class="text-secondary font-montBold" 
+            @click="changeModalState('imgModal', true)"
+          >
             Add Image
           </button>
         </div>
@@ -46,7 +49,7 @@
             input-type="password"
             place-holder="Nx3219034@PSK"
             disable-icon
-            @on-click-input="openModal"
+            @on-click-input="changeModalState('passwordModal', true)"
           />
           <Input
             label="Business Name"
@@ -59,12 +62,14 @@
             input-type="text"
             place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016 "
             disable-icon
+            @on-click-input="changeModalState('locationModal', true)"
           />
           <Input
             label="Location 2"
             input-type="text"
             place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016"
             disable-icon
+            @on-click-input="changeModalState('locationModal', true)"
           />
         </div>
       </div>
@@ -91,13 +96,81 @@
           title="Save and Continue"
           type="secondary"
           extra-classes="w-full rounded py-4"
+          @click="saveData('imgModal')"
         />
       </div>
     </Card>
     <Modal
-      :show="showModal"
+      :show="modals.imgModal"
       :is-small="true"
-      :onclose="closeModal"
+      @on-close="changeModalState('imgModal', false)"
+    >
+      <ProfileHeaderVue title="Add Profile Image" />
+      <div class="mt-4 border border-input-border flex flex-col justify-center items-center gap-5 h-[250px]">
+        <img
+          :src="UploadImg"
+          alt="img"
+        >
+        <p class="text-3xl font-mont tracking-widest opacity-40 font-medium">Upload Image</p>
+      </div>
+      <Button
+          title="Upload"
+          type="secondary"
+          extra-classes="w-full rounded py-4 mt-6"
+          @on-press="saveData('imgModal')"
+        />
+    </Modal>
+    <Modal
+      :show="modals.locationModal"
+      :is-small="true"
+      @on-close="changeModalState('locationModal', false)"
+    >
+      <ProfileHeaderVue title="Add Location" />
+      <div class="flex flex-col gap-4 mt-4">
+        <Input
+          label="Adress1"
+          place-holder="Tempor laboris eu ea in eiusmod fugiat ad tempor."
+          input-type="text"
+          disable-icon
+        />
+        <Input
+          label="Adress2"
+          place-holder="Dolor eiusmod exercitation sint quis ipsum cillum"
+          input-type="text"
+          disable-icon
+        />
+        <Input
+          label="City"
+          place-holder="Texas"
+          input-type="text"
+          disable-icon
+        />
+        <div class="flex gap-4">
+          <Input
+            label="State"
+            place-holder="USA"
+            input-type="text"
+            disable-icon
+          />
+          <Input
+            label="Zip Code"
+            place-holder="32131"
+            input-type="text"
+            disable-icon
+          />
+        </div>
+        <Button
+          title="Save"
+          type="secondary"
+          extra-classes="rounded sm:py-4 mt-2"
+          @on-press="saveData('locationModal')"
+        />
+      </div>
+    </Modal>
+    <Modal
+      :show="modals.passwordModal"
+      :is-small="true"
+      @on-close="changeModalState('passwordModal', false)"
     >
       <ProfileHeaderVue title="Change Password" />
       <div class="flex flex-col gap-4 mt-4">
@@ -123,7 +196,7 @@
           title="Save"
           type="secondary"
           extra-classes="rounded sm:py-4 mt-2"
-          @on-press="saveData"
+          @on-press="saveData('passwordModal')"
         />
       </div>
     </Modal>
@@ -139,9 +212,12 @@ import Button from '../components/Button.vue'
 import Avatar from '../components/Avatar.vue'
 import Modal from '../components/Modal.vue'
 import AddNew from '../assets/add-new-btn.png'
+import UploadImg from '../assets/upload-img.png'
 import User from '../assets/user.png'
 
 export default defineComponent({
+
+  
   components: {
     ProfileHeaderVue,
     Card,
@@ -154,18 +230,20 @@ export default defineComponent({
     return {
       AddNew,
       User,
-      showModal: false,
+      UploadImg,
+      modals:  {
+        imgModal: false,
+        passwordModal: false,
+        locationModal: false,
+      },
     }
   },
   methods: {
-    closeModal: function () {
-      this.showModal = false
+    changeModalState: function (type: string, value: boolean) {
+      this.modals[type] = value
     },
-    openModal: function () {
-      this.showModal = true
-    },
-    saveData() {
-      this.closeModal()
+    saveData(type: string) {
+      this.changeModalState(type, false)
     },
   },
 })
