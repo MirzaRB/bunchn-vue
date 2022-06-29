@@ -10,6 +10,9 @@ module.exports = {
         mont: ['Montserrat'],
         montBold: ['Montserrat-Bold'],
       },
+      fontSize:{
+        '10':'10px',
+      },
       colors: {
         primary: '#0E0606',
         secondary: '#319D8F',
@@ -31,6 +34,9 @@ module.exports = {
       },
       maxWidth: {
         xs: '210px',
+      },
+      borderRadius:{
+        'large':'3.5rem',
       },
       boxShadow: {
         card: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',

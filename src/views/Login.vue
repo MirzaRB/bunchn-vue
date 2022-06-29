@@ -13,7 +13,7 @@
     >
       <Card
         l-radius
-        class="p-0 md:p-2 sm:absolute sm:right-0 w-100% sm:w-[107%] md:w-[105%] bg-white w-screen h-screen flex flex-col justify-center items-center"
+        class="p-0 md:p-2 sm:absolute sm:right-0 w-100% sm:w-[115%] md:w-[115%]  lg:w-[105%] bg-white w-screen h-screen flex flex-col justify-center items-center"
       >
         <div class="flex flex-col items-start gap-5 w-3/4 relative">
           <img
@@ -21,7 +21,7 @@
             alt="logo"
             class="sm:3/5 md:w-2/5"
           >
-          <div class="text-3xl sm:text-3xl lg:text-4xl font-bold">
+          <div class="text-2xl lg:text-3xl xl:text-4xl font-bold">
             Business <span class="text-secondary">Login</span>
           </div>
           <div class="border-2 border-solid border-secondary rounded w-16" />
@@ -42,7 +42,7 @@
           <div
             class="flex justify-center w-full sm:absolute sm:-bottom-20 md:-bottom-28 lg:-bottom-32 xl:-bottom-40"
           >
-            <div class="text-xs md:text-xs xl:text-base">
+            <div class="text-xs sm:text-10 lg:text-sm">
               Don't have a business account?
               <button
                 class="text-secondary font-medium"
