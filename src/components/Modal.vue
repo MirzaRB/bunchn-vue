@@ -1,11 +1,11 @@
 <template>
   <div>
     <vue-final-modal
-      v-model="show"
+      v-model="isVisible"
       classes="modal-container"
-      content-class="modal-content"
-      @closed="onclose"
-      @click-outside="onclose"
+      :content-class="[modal-content,widthClass]"
+      @closed="$emit('on-close')"
+      @click-outside="$emit('on-close')"
     >
       <div :class="[modal__content, tailwind__content]">
         <Card 
@@ -30,13 +30,21 @@ export default {
   props: {
     show: Boolean,
     isSmall: Boolean,
-    onclose: { type: Function, default: () => ({}) },
   },
+  emits: ['on-close'],
   data() {
     return {
+      isVisible: false,
       modal__content: 'modal__content',
-      tailwind__content: `rounded-3xl ${this.isSmall ? 'w-2/6' : 'w-3/4'}`,
+      tailwind__content: 'rounded-3xl w-full',
+      widthClass: `${this.isSmall ? 'w-2/6' : 'w-3/4'}`,
     }
+  },
+  watch: {
+    // whenever show prop changes, this function will run
+    show(value) {
+      this.isVisible = value
+    },
   },
 }
 </script>
@@ -47,12 +55,11 @@ export default {
   align-items: center;
 }
 ::v-deep .modal-content {
-  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 70%;
+  max-height: 90%;
   margin: 0 1rem;
   padding: 1rem;
   border-radius: 1.5rem;
