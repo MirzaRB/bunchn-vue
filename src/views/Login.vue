@@ -24,7 +24,7 @@
           <div class="text-2xl lg:text-3xl xl:text-4xl font-bold">
             Business <span class="text-secondary">Login</span>
           </div>
-          <div class="border-2 border-solid border-secondary rounded w-16" />
+          <div class="border-t-4 border-solid border-secondary rounded w-16" />
           <Input
             label="User Name"
             input-type="text"
