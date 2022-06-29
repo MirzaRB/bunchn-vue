@@ -59,7 +59,7 @@
       <Modal
         :show="showModal"
         :is-small="false"
-        :onclose="closeModal"
+        @on-close="closeModal"
       >
         <ProfileHeader title="Request a Business Account" />
         <div class="flex flex-col gap-4 mt-4">
