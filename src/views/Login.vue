@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen">
+  <div class="flex min-h-screen">
     <div class="hidden sm:inline-flex w-3/5">
       <Video
         :video-src="Video1"
@@ -13,7 +13,7 @@
     >
       <Card
         l-radius
-        class="p-0 md:p-2 sm:absolute sm:right-0 w-100% sm:w-[115%] md:w-[115%]  lg:w-[105%] bg-white w-screen h-screen flex flex-col justify-center items-center"
+        class="p-0 md:p-2 sm:absolute sm:right-0 w-100% sm:w-[115%] md:w-[115%]  lg:w-[110%] bg-white w-screen h-full flex flex-col justify-center items-center"
       >
         <div class="flex flex-col items-start gap-5 w-3/4 relative">
           <img

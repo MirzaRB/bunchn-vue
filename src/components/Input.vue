@@ -58,7 +58,7 @@ export default defineComponent({
       type:String,
       required:false,
       default:'',
-    }
+    },
   },
   emits: ['on-click-input'],
   data() {

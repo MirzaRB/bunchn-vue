@@ -33,14 +33,12 @@
             input-type="text"
             place-holder="Jhon Doe"
             :icon-src="userIcon"
-
           />
           <Input
             label="Bio"
             input-type="text"
             place-holder="Lorem Ipsum is simply dummy text of the printing and typesetting Ipsum has been the industry's standard dummy."
             :icon-src="bioIcon"
-
           />
         </div>
         <div class="flex-1 flex flex-col gap-4">

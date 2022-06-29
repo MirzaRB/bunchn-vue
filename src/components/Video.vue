@@ -5,7 +5,7 @@
   >
     <video
       ref="videoElement"
-      class="w-full h-[97%]"
+      class="w-full h-[100%] object-cover"
     >
       <source :src="videoSrc">
     </video>
