@@ -101,6 +101,9 @@
       </div>
     </Card>
     <Modal
+      :show="showModal"
+      :is-small="true"
+      :onclose="closeModal"
       :show="modals.imgModal"
       :is-small="true"
       @on-close="changeModalState('imgModal', false)"
