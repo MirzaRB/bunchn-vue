@@ -1,10 +1,11 @@
 <template>
   <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
-    <table class="w-max text-sm text-left text-gray-500 dark:text-gray-400">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead class="text-lg text-tableHeadText bg-tableHeadBg font-montBold">
         <tr>
           <th
-            v-for="head in heads"
+            v-for="(head, index) in heads"
+            :key="`head-${index + 1}`"
             scope="col"
             class="p-6 border-r border-tableBorder"
           >
@@ -14,14 +15,20 @@
       </thead>
       <tbody>
         <tr
-          v-for="row in rows"
+          v-for="(row, rowIndex) in rows"
+          :key="`row-${rowIndex + 1}`"
           class="bg-white text-black font-mont text-md shadow-table"
         >
           <td
-            v-for="head in heads"
+            v-for="(head, colIndex) in heads"
+            :key="`row-${rowIndex + 1}-col-${colIndex}`"
+
             class="p-6 shadow-table border-r border-tableBorder"
           >
             {{ head.type === 'text' ? row[head.key] : null }}
+            <div v-if="head.type === 'link'">
+              <a :href="row[head.key]">{{ row[head.key] }}</a>
+            </div>
             <div v-if="head.type === 'actions'">
               <ActionButtons />
             </div>
@@ -43,26 +50,32 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import ActionButtons from './ActionButtons.vue'
 import Button from './Button.vue'
-import CheckBox from '../components/Checkbox.vue'
 import Checkbox from './Checkbox.vue'
 
 export default defineComponent({
-    components: {
-        ActionButtons,
-        Button,
-        Checkbox,
+  components: {
+    ActionButtons,
+    Button,
+    Checkbox,
+  },
+  props: {
+    heads: {
+      type: Array as PropType<string[]>,
+      required: true,
+      default() {
+        return []
+      },
     },
-    props: {
-        heads: Array,
-        rows: Array,
+    rows: {
+      type: Array as PropType<string[]>,
+      required: true,
+      default() {
+        return []
+      },
     },
-    data() {
-        return {
-
-        }
-    },
+  },
 })
 </script>
