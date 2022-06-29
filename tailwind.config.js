@@ -15,6 +15,11 @@ module.exports = {
         secondary: '#319D8F',
         grey: '#F3F4F8',
         'input-border': '#DADBDB',
+        authBg: '#F9F7FE',
+        tableHeadBg: '#EEEEEE',
+        tableHeadText: '#0E0606',
+        tableBorder: '#C9CDD1',
+        iconBtn: 'rgba(49, 157, 143, 0.1)',
         'root-background': '#fcf6fc',
       },
       spacing: {
@@ -28,7 +33,8 @@ module.exports = {
         xs: '210px',
       },
       boxShadow: {
-        card: 'rgba(149, 157, 165, 0.2) 0px 8px 24px;',
+        card: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+        table: '0px 5px 25px -4px rgba(0, 0, 0, 0.08)',
       },
     },
   },
