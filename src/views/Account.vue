@@ -23,13 +23,13 @@
             label="Email"
             input-type="email"
             place-holder="info@example.com"
-            disable-icon
+            :icon-src="emailIcon"
           />
           <Input
             label="User Name"
             input-type="text"
             place-holder="Jhon Doe"
-            disable-icon
+            :icon-src="userIcon"
           />
         </div>
         <div class="flex-1 flex flex-col gap-4">
@@ -37,13 +37,13 @@
             label="Password"
             input-type="password"
             place-holder="Nx3219034@PSK"
-            disable-icon
+            :icon-src="passwordIcon"
           />
           <Input
             label="Business Name"
             input-type="text"
             place-holder="Dummy Bussness"
-            disable-icon
+            :icon-src="businessIcon"
           />
         </div>
       </div>
@@ -52,7 +52,7 @@
           label="Home"
           input-type="text"
           place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016"
-          disable-icon
+          :icon-src="homeIcon"
         />
       </div>
       
@@ -61,13 +61,13 @@
           label="Bio"
           input-type="text"
           place-holder="Lorem Ipsum is simply dummy text of the printing and typesetting Ipsum has been the industry's standard dummy."
-          disable-icon
+          :icon-src="bioIcon"
         />
         <Input
           label="Locations"
           input-type="text"
           place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016 "
-          disable-icon
+          :icon-src="locationIcon"
         />
       </div>
       <div class="flex  gap-4 mt-8">
@@ -95,6 +95,13 @@ import Input from '../components/Input.vue'
 import Button from '../components/Button.vue'
 import Avatar from '../components/Avatar.vue'
 import User from '../assets/user.png'
+import userIcon from '../assets/user-icon.svg'
+import passwordIcon from '../assets/password-icon.svg'
+import businessIcon from '../assets/businessIcon.png'
+import locationIcon from '../assets/locationIcon.png'
+import emailIcon from '../assets/emailIcon.png'
+import bioIcon from '../assets/bioIcon.png'
+import homeIcon from '../assets/homeIcon.png'
 
 export default defineComponent({
   components: {
@@ -107,6 +114,13 @@ export default defineComponent({
   data(){
     return{
         User,
+        userIcon,
+        passwordIcon,
+        businessIcon,
+        locationIcon,
+        emailIcon,
+        bioIcon,
+        homeIcon,
         
     }
   },
