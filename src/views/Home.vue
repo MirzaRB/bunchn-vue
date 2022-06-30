@@ -1,11 +1,13 @@
 <template>
   <div class="max-w-none min-h-screen min-w-full bg-white">
-    <div class="h-screen min-h-half bg-hero-background bg-no-repeat bg-cover">
+    <div class="h-screen bg-hero-background bg-no-repeat bg-cover">
       <div class="w-full max-w-screen-md mx-auto absolute left-2/4 bottom-2/4 video-container">
-        <iframe
-          width="100%"
-          height="470"
-          src="https://www.youtube.com/embed/nqye02H_H6I?controls=0"
+        <Video
+          class="w-full"
+          :video-src="Video1"
+          :is-play="isPlay"
+          @on-play="playVideo"
+          @on-pause="pauseVideo"
         />
       </div>
     </div>
@@ -87,6 +89,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import Video from '../components/Video.vue'
+
 import playStoreIcon from '../assets/play-store.png'
 import appStoreIcon from '../assets/app-store.png'
 import instaIcon from '../assets/instagram.svg'
@@ -94,8 +98,11 @@ import linkedInIcon from '../assets/linkedin.svg'
 import youtubeIcon from '../assets/youtube.svg'
 import tiktokIcon from '../assets/tiktok.svg'
 
+import Video1 from '../assets/video1.mp4'
+
 export default defineComponent({
   components: {
+    Video,
   },
   data() {
     return {
@@ -105,7 +112,17 @@ export default defineComponent({
       linkedInIcon,
       youtubeIcon,
       tiktokIcon,
+      Video1,
+      isPlay: false,
     }
+  },
+  methods: {
+    playVideo() {
+      this.isPlay = true
+    },
+    pauseVideo() {
+      this.isPlay = false
+    },
   },
 })
 </script>
