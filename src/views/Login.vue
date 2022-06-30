@@ -79,7 +79,7 @@
               disable-icon
             />
           </div>
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col md:flex-row gap-4">
             <Input 
               label="Phone"
               place-holder="+1 234 53215245"
