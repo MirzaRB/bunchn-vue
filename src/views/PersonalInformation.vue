@@ -10,10 +10,12 @@
         @click="changeModalState('imgModal', true)"
       >
         <ProfileHeaderVue title="Complete your Profile" />
-        <div class="flex flex-col cursor-pointer">
+        <div 
+          class="flex flex-col cursor-pointer" 
+          @click="changeModalState('imgModal', true)">
           <Avatar
             :src="profilePicture"
-            size="lg"
+            size="xl"
           />
           <button class="text-secondary font-montBold">
             Add Image

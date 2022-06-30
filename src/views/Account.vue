@@ -13,7 +13,7 @@
         <div class="flex flex-col cursor-pointer">
           <Avatar 
             :src="profilePicture" 
-            size="lg"
+            size="xl"
           />
           <button class="text-secondary font-montBold">
             Add Image
