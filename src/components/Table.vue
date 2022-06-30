@@ -49,13 +49,23 @@
       </table>
     </div>
     <div class="mt-20">
-      <Pagination />
+      <Pagination
+        :total-pages="totalPages"
+        :current-page="currentPage"
+        :limit="limit"
+        @on-press-prev="changePage(-1)"
+        @on-press-next="changePage(+1)"
+        @on-press-page="changePage"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
+
+import { globalState } from '../store'
+
 import ActionButtons from './ActionButtons.vue'
 import Button from './Button.vue'
 import Checkbox from './Checkbox.vue'
@@ -82,6 +92,18 @@ export default defineComponent({
       default() {
         return []
       },
+    },
+  },
+  data() {
+    return {
+      totalPages: globalState.paginationData.totalPages,
+      currentPage: globalState.paginationData.currentPage,
+      limit: globalState.paginationData.limit,
+    }
+  },
+  methods: {
+    changePage(direction: number) {
+      globalState.paginationData.currentPage = this.currentPage + direction
     },
   },
 })

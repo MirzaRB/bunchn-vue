@@ -8,6 +8,11 @@ export const globalState = reactive({
     balance: '$340.50',
     availableBalance: '$350.00',
   },
+  paginationData: {
+    totalPages: 6,
+    currentPage: 1,
+    limit: 15,
+  },
   tableDataActive: {
     heads: [
       {
