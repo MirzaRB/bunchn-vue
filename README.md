@@ -45,18 +45,6 @@ Lint and fix:
 npm run lint:fix
 ```
 
-## Contributing
+## Firebase Deployed Link
 
-Contributions, feedback and issues are welcome. Feel free to fork, comment, critique, or submit a pull request.
-
-## Acknowledgements
-
-This repo was adapted from [Unihen](https://twitter.com/uninen)'s [vite-ts-tailwind-starter](https://github.com/Uninen/vite-ts-tailwind-starter) project.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-Follow [@vincentdoerig](https://twitter.com/vincentdoerig) on Twitter.
+[Stagin URL](https://bunchn-staging-fbfae.web.app)
