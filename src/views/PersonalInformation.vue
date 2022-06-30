@@ -3,7 +3,7 @@
     <Card
       l-radius
       r-radius
-      class="w-3/4 p-16"
+      class="w-full md:w-3/4 p-8 md:p-16"
     >
       <div
         class="flex justify-between"
@@ -23,8 +23,8 @@
           </button>
         </div>
       </div>
-      <div class="flex flex-col sm:flex-row w-full gap-4 mt-4">
-        <div class="flex-1 flex flex-col gap-4">
+      <div class="flex flex-col md:flex-row w-full md:gap-4 mt-4">
+        <div class="flex-1 flex flex-col gap-2 md:gap-4">
           <Input
             label="Email"
             input-type="email"
@@ -44,7 +44,7 @@
             :icon-src="bioIcon"
           />
         </div>
-        <div class="flex-1 flex flex-col gap-4">
+        <div class="flex-1 flex flex-col gap-2 md:gap-4">
           <Input
             label="Password"
             input-type="password"
@@ -76,7 +76,7 @@
       </div>
       <div class="flex flex-col mt-8">
         <div class="flex justify-between items-center">
-          <h1 class="text-2xl font-montBold">
+          <h1 class="text-xl md:text-2xl font-montBold">
             Payment Information
           </h1>
           <img
@@ -85,7 +85,7 @@
             class="cursor-pointer"
           >
         </div>
-        <p class="mt-5 font-mont">
+        <p class="mt-5 text-sm md:text-base font-mont">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been to standard dummy text ever since the
           1500s, when an unknown printer took a galley of type scrambled it to
@@ -107,17 +107,39 @@
       @on-close="changeModalState('imgModal', false)"
     >
       <ProfileHeaderVue title="Add Profile Image" />
-      <div
-        class="mt-4 border border-input-border flex flex-col justify-center items-center gap-5 h-[250px]"
+      <label
+        for="input"
+        class="cursor-pointer"
       >
-        <img
-          :src="UploadImg"
-          alt="img"
+        <div
+          class="mt-4 border border-input-border flex flex-col justify-center items-center gap-5 h-[250px]"
         >
-        <p class="text-3xl font-mont tracking-widest opacity-40 font-medium">
-          Upload Image
-        </p>
-      </div>
+          <img
+            v-if="selected"
+            :src="selectedImg"
+            alt="img"
+          >
+          <img
+            v-else
+            :src="UploadImg"
+            alt="img"
+          >
+          <p 
+            v-if="!selected"
+            class="text-3xl font-mont tracking-widest opacity-40 font-medium"
+          >
+            Upload Image
+          </p>
+        </div>
+      </label>
+      <input
+        id="input"
+        type="file"
+        name="upload-image"
+        accept="image/*"
+        class="hidden"
+        @change="imgHandler"
+      >
       <Button
         title="Upload"
         type="secondary"
@@ -248,6 +270,8 @@ export default defineComponent({
       emailIcon,
       bioIcon,
       profilePicture: globalState.userInfo.avatar,
+      selected: false,
+      selectedImg: '',
       UploadImg,
       modals: {
         imgModal: false,
@@ -262,9 +286,23 @@ export default defineComponent({
     },
     saveData(type: string) {
       this.changeModalState(type, false)
+       if(this.selectedImg){
+        this.profilePicture = this.selectedImg
+        this.selected=false
+      }
     },
     saveAndContinue(){
       this.$router.push('dashboard')
+    },
+    imgHandler(e: Event) {
+      const reader = new FileReader()
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          this.selected=true
+          this.selectedImg = reader.result
+        }
+      }
+      reader.readAsDataURL(e.target.files[0])
     },
   },
 })

@@ -37,7 +37,7 @@ export default {
       isVisible: false,
       modal__content: 'modal__content',
       tailwind__content: 'rounded-3xl w-full',
-      widthClass: `${this.isSmall ? 'w-2/6' : 'w-3/4'}`,
+      widthClass: `${this.isSmall ? 'w-4/5 md:w-3/5 lg:w-2/6' : 'w-4/5 md:w-3/5 lg:w-3/4'}`,
     }
   },
   watch: {

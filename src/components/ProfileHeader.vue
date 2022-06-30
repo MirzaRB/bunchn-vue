@@ -19,7 +19,7 @@ export default defineComponent({
   },
   data() {
     return {
-      fontSize: 'text-3xl font-montBold ',
+      fontSize: 'text-2xl md:text-3xl font-montBold ',
       borderClass: 'border-t-4 border-solid border-secondary rounded w-16 mt-3 ',
     }
   },

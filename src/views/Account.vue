@@ -5,14 +5,14 @@
       r-radius
       class="w-3/4 p-16"
     >
-      <div 
-        class="flex justify-between " 
+      <div
+        class="flex justify-between"
         @click="changeModalState('imgModal', true)"
       >
         <ProfileHeaderVue title="Account" />
         <div class="flex flex-col cursor-pointer">
-          <Avatar 
-            :src="profilePicture" 
+          <Avatar
+            :src="profilePicture"
             size="xl"
           />
           <button class="text-secondary font-montBold">
@@ -58,8 +58,8 @@
           :icon-src="homeIcon"
         />
       </div>
-      
-      <div class=" flex flex-col sm:flex-row gap-4">
+
+      <div class="flex flex-col sm:flex-row gap-4">
         <Input
           label="Bio"
           input-type="text-area"
@@ -73,7 +73,7 @@
           :icon-src="locationIcon"
         />
       </div>
-      <div class="flex  gap-4 mt-8">
+      <div class="flex gap-4 mt-8">
         <Button
           title="Cancel"
           type="secondary-bordered"
@@ -94,15 +94,39 @@
       @on-close="changeModalState('imgModal', false)"
     >
       <ProfileHeaderVue title="Add Profile Image" />
-      <div class="mt-4 border border-input-border flex flex-col justify-center items-center gap-5 h-[250px]">
-        <img
-          :src="UploadImg"
-          alt="img"
+      <label
+        for="input"
+        class="cursor-pointer"
+      >
+        <div
+          class="mt-4 border border-input-border flex flex-col justify-center items-center gap-5 h-[250px]"
         >
-        <p class="text-3xl font-mont tracking-widest opacity-40 font-medium">
-          Upload Image
-        </p>
-      </div>
+          <img
+            v-if="selected"
+            :src="selectedImg"
+            alt="img"
+          >
+          <img
+            v-else
+            :src="UploadImg"
+            alt="img"
+          >
+          <p 
+            v-if="!selected"
+            class="text-3xl font-mont tracking-widest opacity-40 font-medium"
+          >
+            Upload Image
+          </p>
+        </div>
+      </label>
+      <input
+        id="input"
+        type="file"
+        name="upload-image"
+        accept="image/*"
+        class="hidden"
+        @change="imgHandler"
+      >
       <Button
         title="Upload"
         type="secondary"
@@ -141,9 +165,9 @@ export default defineComponent({
     Button,
     Avatar,
     Modal,
-},
-  data(){
-    return{
+  },
+  data() {
+    return {
       userIcon,
       UploadImg,
       passwordIcon,
@@ -152,18 +176,34 @@ export default defineComponent({
       emailIcon,
       bioIcon,
       homeIcon,
+      selected: false,
+      selectedImg: '',
       profilePicture: globalState.userInfo.avatar,
-      modals:  {
+      modals: {
         imgModal: false,
-        },
+      },
     }
   },
-    methods: {
+  methods: {
     changeModalState: function (type: string, value: boolean) {
       this.modals[type] = value
     },
     saveData(type: string) {
       this.changeModalState(type, false)
+      if(this.selectedImg){
+        this.profilePicture = this.selectedImg
+        this.selected=false
+      }
+    },
+    imgHandler(e: Event) {
+      const reader = new FileReader()
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          this.selected=true
+          this.selectedImg = reader.result
+        }
+      }
+      reader.readAsDataURL(e.target.files[0])
     },
   },
 })
