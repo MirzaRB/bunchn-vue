@@ -10,13 +10,20 @@
       {{ label }}
     </p>
     <input
+      v-if="inputType !== 'text-area'"
       :type="inputType"
       :placeholder="placeHolder"
       class="w-full border-2 border-input-border border-solid rounded-lg pl-5 pr-10 py-3 text-primary font-normal font-sm"
     >
+    <textarea
+      v-else
+      rows="3"
+      :placeholder="placeHolder"
+      class="w-full border-2 border-input-border border-solid rounded-lg pl-5 pr-10 py-3 text-primary font-normal font-sm"
+    />
     <div
       v-if="iconVisibility"
-      class="absolute right-3 top-1/2 translate-y-neg-1/2 mt-1.5"
+      :class="`absolute right-3 ${inputType !== 'text-area' ? 'top-1/2 translate-y-neg-1/2' : 'top-5'} mt-1.5`"
     >
       <img
         class="w-4"

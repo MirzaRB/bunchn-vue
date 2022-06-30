@@ -9,7 +9,7 @@
         <ProfileHeaderVue title="Account" />
         <div class="flex flex-col cursor-pointer">
           <Avatar 
-            :src="User" 
+            :src="profilePicture" 
             size="lg"
           />
           <button class="text-secondary font-montBold">
@@ -59,13 +59,13 @@
       <div class=" flex flex-col sm:flex-row gap-4">
         <Input
           label="Bio"
-          input-type="text"
+          input-type="text-area"
           place-holder="Lorem Ipsum is simply dummy text of the printing and typesetting Ipsum has been the industry's standard dummy."
           :icon-src="bioIcon"
         />
         <Input
           label="Locations"
-          input-type="text"
+          input-type="text-area"
           place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016 "
           :icon-src="locationIcon"
         />
@@ -94,7 +94,6 @@ import Card from '../components/Card.vue'
 import Input from '../components/Input.vue'
 import Button from '../components/Button.vue'
 import Avatar from '../components/Avatar.vue'
-import User from '../assets/user.png'
 import userIcon from '../assets/user-icon.svg'
 import passwordIcon from '../assets/password-icon.svg'
 import businessIcon from '../assets/businessIcon.png'
@@ -102,6 +101,8 @@ import locationIcon from '../assets/locationIcon.png'
 import emailIcon from '../assets/emailIcon.png'
 import bioIcon from '../assets/bioIcon.png'
 import homeIcon from '../assets/homeIcon.png'
+
+import { globalState } from '../store'
 
 export default defineComponent({
   components: {
@@ -113,7 +114,6 @@ export default defineComponent({
 },
   data(){
     return{
-        User,
         userIcon,
         passwordIcon,
         businessIcon,
@@ -121,6 +121,7 @@ export default defineComponent({
         emailIcon,
         bioIcon,
         homeIcon,
+        profilePicture: globalState.userInfo.avatar,
         
     }
   },

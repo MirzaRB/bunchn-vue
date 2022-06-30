@@ -9,7 +9,7 @@
         <ProfileHeaderVue title="Complete your Profile" />
         <div class="flex flex-col cursor-pointer">
           <Avatar
-            :src="User"
+            :src="profilePicture"
             size="lg"
           />
           <button 
@@ -36,7 +36,7 @@
           />
           <Input
             label="Bio"
-            input-type="text"
+            input-type="text-area"
             place-holder="Lorem Ipsum is simply dummy text of the printing and typesetting Ipsum has been the industry's standard dummy."
             :icon-src="bioIcon"
           />
@@ -57,14 +57,14 @@
           />
           <Input
             label="Location 1"
-            input-type="text"
+            input-type="text-area"
             place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016 "
             :icon-src="locationIcon"
             @on-click-input="changeModalState('locationModal', true)"
           />
           <Input
             label="Location 2"
-            input-type="text"
+            input-type="text-area"
             place-holder="Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016"
             :icon-src="locationIcon"
             @on-click-input="changeModalState('locationModal', true)"
@@ -205,6 +205,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 import ProfileHeaderVue from '../components/ProfileHeader.vue'
 import Card from '../components/Card.vue'
 import Input from '../components/Input.vue'
@@ -213,13 +214,14 @@ import Avatar from '../components/Avatar.vue'
 import Modal from '../components/Modal.vue'
 import AddNew from '../assets/add-new-btn.png'
 import UploadImg from '../assets/upload-img.png'
-import User from '../assets/user.png'
 import userIcon from '../assets/user-icon.svg'
 import passwordIcon from '../assets/password-icon.svg'
 import businessIcon from '../assets/businessIcon.png'
 import locationIcon from '../assets/locationIcon.png'
 import emailIcon from '../assets/emailIcon.png'
 import bioIcon from '../assets/bioIcon.png'
+
+import { globalState } from '../store'
 
 export default defineComponent({
 
@@ -241,7 +243,7 @@ export default defineComponent({
       locationIcon,
       emailIcon,
       bioIcon,
-      User,
+      profilePicture: globalState.userInfo.avatar,
       UploadImg,
       modals:  {
         imgModal: false,

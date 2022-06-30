@@ -23,7 +23,7 @@ export default defineComponent({
     },
     data() {
         return {
-            avatarClass: `${this.size === 'lg' && 'w-24 h-24'} ${this.size === 'md' && 'w-15 h-15'} ${this.size === 'sm' && 'w-10 h-10'} rounded-full`,
+            avatarClass: `${this.size === 'lg' && 'w-24 h-24'} ${this.size === 'md' && 'w-15 h-15'} ${this.size === 'sm' && 'w-10 h-10'} rounded-full object-cover`,
         }
     },
 })
