@@ -266,7 +266,7 @@ export const globalState = reactive({
         price: '17-Apr-2022',
         minMember: '17-Apr-2020',
         maxMember: '17-Apr-2022',
-        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+        limit: 'Lorem Ipsum is simply text of the printing simply text',
       },
       {
         name: 'Privacy Type',
@@ -274,7 +274,7 @@ export const globalState = reactive({
         price: '17-Apr-2022',
         minMember: '17-Apr-2020',
         maxMember: '17-Apr-2022',
-        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+        limit: 'Lorem Ipsum is simply text of the printing simply text',
       },
       {
         name: 'Privacy Type',
@@ -282,7 +282,7 @@ export const globalState = reactive({
         price: '17-Apr-2022',
         minMember: '17-Apr-2020',
         maxMember: '17-Apr-2022',
-        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+        limit: 'Lorem Ipsum is simply text of the printing simply text',
       },
       {
         name: 'Privacy Type',
@@ -290,7 +290,7 @@ export const globalState = reactive({
         price: '17-Apr-2022',
         minMember: '17-Apr-2020',
         maxMember: '17-Apr-2022',
-        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+        limit: 'Lorem Ipsum is simply text of the printing simply text',
       },
       {
         name: 'Privacy Type',
@@ -298,7 +298,7 @@ export const globalState = reactive({
         price: '17-Apr-2022',
         minMember: '17-Apr-2020',
         maxMember: '17-Apr-2022',
-        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+        limit: 'Lorem Ipsum is simply text of the printing simply text',
       },
     ],
   },
