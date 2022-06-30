@@ -9,10 +9,10 @@
     >
       <source :src="videoSrc">
     </video>
-    <button v-if="!isPlay">
+    <button v-if="!isPlay" :class="btnClass">
       <img
         :src="playIcon"
-        :class="btnClass"
+        class="w-full"
       >
     </button>
   </div>
