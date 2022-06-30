@@ -47,4 +47,4 @@ npm run lint:fix
 
 ## Firebase Deployed Link
 
-[Stagin URL](https://bunchn-staging-fbfae.web.app)
+[Staging URL:](https://bunchn-staging-fbfae.web.app)
