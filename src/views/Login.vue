@@ -65,7 +65,7 @@
       >
         <ProfileHeader title="Request a Business Account" />
         <div class="flex flex-col gap-4 mt-4">
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col md:flex-row gap-4">
             <Input 
               label="Name"
               place-holder="John Alam"
