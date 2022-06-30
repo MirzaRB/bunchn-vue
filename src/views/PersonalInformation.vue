@@ -5,17 +5,17 @@
       r-radius
       class="w-3/4 p-16"
     >
-      <div class="flex justify-between">
+      <div
+        class="flex justify-between"
+        @click="changeModalState('imgModal', true)"
+      >
         <ProfileHeaderVue title="Complete your Profile" />
         <div class="flex flex-col cursor-pointer">
           <Avatar
             :src="profilePicture"
             size="lg"
           />
-          <button 
-            class="text-secondary font-montBold" 
-            @click="changeModalState('imgModal', true)"
-          >
+          <button class="text-secondary font-montBold">
             Add Image
           </button>
         </div>
@@ -94,7 +94,7 @@
           title="Save and Continue"
           type="secondary"
           extra-classes="w-full rounded py-4"
-          @click="saveData('imgModal')"
+          @click="saveAndContinue"
         />
       </div>
     </Card>
@@ -104,7 +104,9 @@
       @on-close="changeModalState('imgModal', false)"
     >
       <ProfileHeaderVue title="Add Profile Image" />
-      <div class="mt-4 border border-input-border flex flex-col justify-center items-center gap-5 h-[250px]">
+      <div
+        class="mt-4 border border-input-border flex flex-col justify-center items-center gap-5 h-[250px]"
+      >
         <img
           :src="UploadImg"
           alt="img"
@@ -224,8 +226,6 @@ import bioIcon from '../assets/bioIcon.png'
 import { globalState } from '../store'
 
 export default defineComponent({
-
-  
   components: {
     ProfileHeaderVue,
     Card,
@@ -245,7 +245,7 @@ export default defineComponent({
       bioIcon,
       profilePicture: globalState.userInfo.avatar,
       UploadImg,
-      modals:  {
+      modals: {
         imgModal: false,
         passwordModal: false,
         locationModal: false,
@@ -258,6 +258,9 @@ export default defineComponent({
     },
     saveData(type: string) {
       this.changeModalState(type, false)
+    },
+    saveAndContinue(){
+      this.$router.push('dashboard')
     },
   },
 })

@@ -5,7 +5,10 @@
       r-radius
       class="w-3/4 p-16"
     >
-      <div class="flex justify-between ">
+      <div 
+        class="flex justify-between " 
+        @click="changeModalState('imgModal', true)"
+      >
         <ProfileHeaderVue title="Account" />
         <div class="flex flex-col cursor-pointer">
           <Avatar 
@@ -81,9 +84,32 @@
           title="Save"
           type="secondary"
           extra-classes="w-full rounded sm:py-4"
+          @on-press="$router.push('/attributes')"
         />
       </div>
     </Card>
+    <Modal
+      :is-small="true"
+      :show="modals.imgModal"
+      @on-close="changeModalState('imgModal', false)"
+    >
+      <ProfileHeaderVue title="Add Profile Image" />
+      <div class="mt-4 border border-input-border flex flex-col justify-center items-center gap-5 h-[250px]">
+        <img
+          :src="UploadImg"
+          alt="img"
+        >
+        <p class="text-3xl font-mont tracking-widest opacity-40 font-medium">
+          Upload Image
+        </p>
+      </div>
+      <Button
+        title="Upload"
+        type="secondary"
+        extra-classes="w-full rounded py-4 mt-6"
+        @on-press="saveData('imgModal')"
+      />
+    </Modal>
   </div>
 </template>
 
@@ -94,6 +120,7 @@ import Card from '../components/Card.vue'
 import Input from '../components/Input.vue'
 import Button from '../components/Button.vue'
 import Avatar from '../components/Avatar.vue'
+import Modal from '../components/Modal.vue'
 import userIcon from '../assets/user-icon.svg'
 import passwordIcon from '../assets/password-icon.svg'
 import businessIcon from '../assets/businessIcon.png'
@@ -101,6 +128,7 @@ import locationIcon from '../assets/locationIcon.png'
 import emailIcon from '../assets/emailIcon.png'
 import bioIcon from '../assets/bioIcon.png'
 import homeIcon from '../assets/homeIcon.png'
+import UploadImg from '../assets/upload-img.png'
 
 import { globalState } from '../store'
 
@@ -111,19 +139,31 @@ export default defineComponent({
     Input,
     Button,
     Avatar,
+    Modal,
 },
   data(){
     return{
         userIcon,
+        UploadImg,
         passwordIcon,
         businessIcon,
         locationIcon,
         emailIcon,
         bioIcon,
         homeIcon,
-        profilePicture: globalState.userInfo.avatar,
+        modals:  {
+          imgModal: false,
+          },
         
     }
+  },
+    methods: {
+    changeModalState: function (type: string, value: boolean) {
+      this.modals[type] = value
+    },
+    saveData(type: string) {
+      this.changeModalState(type, false)
+    },
   },
 })
 </script>

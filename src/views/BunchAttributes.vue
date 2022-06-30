@@ -149,6 +149,7 @@
           title="Save"
           type="secondary"
           extra-classes="w-full rounded py-4"
+          @on-press="$router.push('dashboard')"
         />
       </div>
     </Card>
