@@ -8,7 +8,7 @@
               v-for="(head, index) in heads"
               :key="`head-${index + 1}`"
               scope="col"
-              class="p-6 border-r border-tableBorder"
+              class="p-6 border-r border-tableBorder whitespace-nowrap"
             >
               {{ head.name }}
             </th>
@@ -40,7 +40,7 @@
                 <Button
                   type="table"
                   :title="row[head.key]"
-                  extra-classes="font-montBold"
+                  extra-classes="px-10 py-2 font-montBold"
                 />
               </div>
             </td>

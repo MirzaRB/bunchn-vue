@@ -216,4 +216,141 @@ export const globalState = reactive({
       },
     ],
   },
+  tableDataPast: {
+    heads: [
+      {
+        name: 'Name',
+        key: 'name',
+        type: 'text',
+      },
+      {
+        name: 'Description',
+        key: 'description',
+        type: 'text',
+      },
+      {
+        name: 'Price',
+        key: 'price',
+        type: 'text',
+      },
+      {
+        name: 'Min Member',
+        key: 'minMember',
+        type: 'text',
+      },
+      {
+        name: 'Max Member',
+        key: 'maxMember',
+        type: 'text',
+      },
+      {
+        name: 'Limit',
+        key: 'limit',
+        type: 'text',
+      },
+      {
+        name: 'Actions',
+        key: 'actions',
+        type: 'actions',
+      },
+    ],
+    rows: [
+      {
+        name: 'Privacy Type',
+        description: '17-Apr-2020',
+        price: '17-Apr-2022',
+        minMember: '17-Apr-2020',
+        maxMember: '17-Apr-2022',
+        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+      },
+      {
+        name: 'Privacy Type',
+        description: '17-Apr-2020',
+        price: '17-Apr-2022',
+        minMember: '17-Apr-2020',
+        maxMember: '17-Apr-2022',
+        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+      },
+      {
+        name: 'Privacy Type',
+        description: '17-Apr-2020',
+        price: '17-Apr-2022',
+        minMember: '17-Apr-2020',
+        maxMember: '17-Apr-2022',
+        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+      },
+      {
+        name: 'Privacy Type',
+        description: '17-Apr-2020',
+        price: '17-Apr-2022',
+        minMember: '17-Apr-2020',
+        maxMember: '17-Apr-2022',
+        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+      },
+      {
+        name: 'Privacy Type',
+        description: '17-Apr-2020',
+        price: '17-Apr-2022',
+        minMember: '17-Apr-2020',
+        maxMember: '17-Apr-2022',
+        Limit: 'Lorem Ipsum is simply text of the printing simply text',
+      },
+    ],
+  },
+  tableDataPayments: {
+    heads: [
+      {
+        name: 'Name',
+        key: 'name',
+        type: 'text',
+      },
+      {
+        name: '#of Slots',
+        key: 'slots',
+        type: 'text',
+      },
+      {
+        name: 'Payment',
+        key: 'payment',
+        type: 'text',
+      },
+      {
+        name: 'Date',
+        key: 'date',
+        type: 'text',
+      },
+    ],
+    rows: [
+      {
+        name: 'John Alam',
+        slots: 'Lorem Ipsum is simply dummy text of the printing.',
+        payment: '$35.99',
+        date: '13-Jun-2022',
+      },
+      {
+        name: 'John Alam',
+        slots: 'Lorem Ipsum is simply dummy text of the printing.',
+        payment: '$35.99',
+        date: '13-Jun-2022',
+      },
+      {
+        name: 'John Alam',
+        slots: 'Lorem Ipsum is simply dummy text of the printing.',
+        payment: '$35.99',
+        date: '13-Jun-2022',
+      },
+      {
+        name: 'John Alam',
+        slots: 'Lorem Ipsum is simply dummy text of the printing.',
+        payment: '$35.99',
+        date: '13-Jun-2022',
+      },
+      {
+        name: 'John Alam',
+        slots: 'Lorem Ipsum is simply dummy text of the printing.',
+        payment: '$35.99',
+        date: '13-Jun-2022',
+      },
+    ],
+  },
 })

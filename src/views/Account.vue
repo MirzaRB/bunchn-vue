@@ -130,6 +130,8 @@ import bioIcon from '../assets/bioIcon.png'
 import homeIcon from '../assets/homeIcon.png'
 import UploadImg from '../assets/upload-img.png'
 
+import { globalState } from '../store'
+
 export default defineComponent({
   components: {
     ProfileHeaderVue,
@@ -149,6 +151,7 @@ export default defineComponent({
       emailIcon,
       bioIcon,
       homeIcon,
+      profilePicture: globalState.userInfo.avatar,
       modals:  {
         imgModal: false,
         },

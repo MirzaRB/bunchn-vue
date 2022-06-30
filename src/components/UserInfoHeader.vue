@@ -2,7 +2,7 @@
   <Card
     r-radius
     l-radius
-    class="rounded-tr-none rounded-tl-none"
+    class="rounded-tr-none rounded-tl-none sm:p-5"
   >
     <div class="flex justify-between flex-wrap">
       <div class="flex items-center md:w-1/3 w-full">
@@ -11,22 +11,22 @@
           size="lg"
         />
         <div class="ml-4">
-          <p class="font-montBold font-black text-2xl">
+          <p class="sm:font-semibold md:font-bold font-black sm:text-lg md:text-2xl">
             {{ data?.name }}
           </p>
           <router-link
             to="/account"
-            class="font-mont text-md mt-2"
+            class="font-mont sm:text-base md:text-md mt-2"
           >
             Edit Account
           </router-link>
-          <p class="font-montBold cursor-pointer text-md text-secondary">
+          <p class="font-montBold cursor-pointer sm:text-base md:text-md text-secondary">
             View Stripe Account
           </p>
         </div>
       </div>
       <div
-        class="md:w-1/3 w-full flex flex-col justify-center items-center md:items-start pl-0 sm:pl-12 border-x-0 md:border-x border-y md:border-y-0 border-gray-300 py-10 md:py-4 my-10 md:my-0"
+        class="md:w-1/3 w-full flex flex-col justify-center items-center md:items-start pl-0 sm:pl-12 border-x-0 md:border-x border-y md:border-y-0 border-gray-300 py-10 md:py-4 sm:my-5 md:my-10 md:my-0"
       >
         <p class="font-montBold text-sm">
           Your Balance

@@ -46,15 +46,17 @@ export default defineComponent({
       widths: ['10%', '25%', '10%', '17.5%', '17.5%', '10%', '10%'],
       activeData: globalState.tableDataActive,
       plannedData: globalState.tableDataPlanned,
+      pastData: globalState.tableDataPast,
+      paymentsData: globalState.tableDataPayments,
       tableData: this.getTableData,
     }
   },
   computed: {
     getTableHeads() {
-      return this.activeTab === 'Active' ? this.activeData.heads : this.plannedData.heads
+      return this.activeTab === 'Active' ? this.activeData.heads : this.activeTab === 'Planned' ? this.plannedData.heads : this.activeTab === 'Past' ? this.pastData.heads  : this.activeTab === 'Payments' ? this.paymentsData.heads : []
     },
     getTableRows() {
-      return this.activeTab === 'Active' ? this.activeData.rows : this.plannedData.rows
+      return this.activeTab === 'Active' ? this.activeData.rows : this.activeTab === 'Planned' ? this.plannedData.rows : this.activeTab === 'Past' ? this.pastData.rows : this.activeTab === 'Payments' ? this.paymentsData.rows : []
     },
   },
   methods: {

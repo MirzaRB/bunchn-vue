@@ -6,7 +6,10 @@
         type="table"
         extra-classes="px-2 py-2 w-max"
       >
-        Edit
+        <img
+          :src="editIcon"
+          class="w-6 h-6"
+        >
       </Button>
     </div>
     <div>
@@ -15,7 +18,10 @@
         type="table"
         extra-classes="px-2 py-2 w-max"
       >
-        Delete
+        <img
+          :src="deleteIcon"
+          class="w-6 h-6"
+        >
       </Button>
     </div>
   </div>
@@ -25,9 +31,18 @@
 import { defineComponent } from 'vue'
 import Button from './Button.vue'
 
+import editIcon from '../assets/edit-icon.svg'
+import deleteIcon from '../assets/delete-icon.svg'
+
 export default defineComponent({
   components: {
     Button,
+  },
+  data() {
+    return {
+      editIcon,
+      deleteIcon,
+    }
   },
 })
 </script>

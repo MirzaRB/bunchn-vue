@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="flex items-center">
+    <div class="flex items-center flex-wrap">
       <div
         v-for="tab in tabs"
         :key="tab"
@@ -44,6 +44,11 @@ export default defineComponent({
   computed: {
     getActiveTab() {
         return this.active
+    },
+  },
+  watch: {
+    active(activetab) {
+      console.log('activetab', activetab)
     },
   },
 })

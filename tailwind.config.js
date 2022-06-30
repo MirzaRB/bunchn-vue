@@ -5,6 +5,9 @@ module.exports = {
   content: ['./index.html', './src/**/*.vue', './src/**/*.ts'],
   theme: {
     extend: {
+      screens: {
+        'sm': '360px',
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         mont: ['Montserrat'],

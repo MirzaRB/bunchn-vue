@@ -3,14 +3,15 @@
     :class="[generateHeaderClasses]"
     :style="{ transform: isWhiteHeader ? 'translateX(-50%)' : '' }"
   >
-    <div class="container flex justify-between mx-auto">
+    <div class="md:container flex justify-between items-center mx-auto">
       <router-link
         to="/"
-        class="w-32"
+        class="sm:w-24 lg:w-32"
       >
         <img
           :src="isWhiteHeader ? logo : logoWhite"
           alt="site-logo"
+          class="w-full"
         >
       </router-link>
       <div
@@ -19,7 +20,7 @@
       >
         <router-link
           to="/"
-          class="text-base font-semibold mr-5"
+          class="sm:text-sm md:text-base font-semibold sm:mr-2.5 md:mr-5"
         >
           Business account?
         </router-link>
@@ -45,7 +46,7 @@
       >
         <router-link
           to="/dashboard"
-          class="mr-5"
+          class="sm:mr-2.5 md:mr-5"
         >
           <Button
             title="Dashboard"
@@ -91,7 +92,7 @@ export default defineComponent({
     },
     generateHeaderClasses() {
       let headerClasses =
-        'w-full px-8 py-6 rounded-bl-3xl rounded-br-3xl'
+        'w-full sm:p-3 md:p-4 lg:px-8 lg:py-6 rounded-bl-3xl rounded-br-3xl'
       this.$route.fullPath === '/'
         ? (headerClasses += ' max-w-5xl mx-auto bg-white absolute left-2/4')
         : (headerClasses += ' max-w-none bg-black container')

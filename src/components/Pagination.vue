@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center flex-wrap">
     <p>Showing 5 of 12 Data</p>
     <div class="flex items-center">
       <Button

@@ -12,7 +12,8 @@
         <ProfileHeaderVue title="Complete your Profile" />
         <div 
           class="flex flex-col cursor-pointer" 
-          @click="changeModalState('imgModal', true)">
+          @click="changeModalState('imgModal', true)"
+        >
           <Avatar
             :src="profilePicture"
             size="xl"
