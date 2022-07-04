@@ -3,8 +3,8 @@
     <div
       v-for="(label, index) in group"
       :key="`button-${index + 1}`"
-      :class="`px-5 py-3 cursor-pointer ${active === label ? 'bg-secondary text-white rounded-lg' : ''}`"
-      @click="$emit('on-press-page', label)"
+      :class="`px-5 py-3 cursor-pointer ${activeIndex === index ? 'bg-secondary text-white rounded-lg' : ''}`"
+      @click="changeIndex(index)"
     >
       {{ label }}
     </div>
@@ -35,6 +35,17 @@ export default defineComponent({
   methods: {
     changePage(page: number) {
       globalState.paginationData.currentPage = page
+    },
+  },
+  emits: ['on-press'],
+  data(){
+    return {
+      activeIndex:0,
+    }
+  },
+  methods:{
+    changeIndex(recIndex:number){
+      return this.activeIndex=recIndex
     },
   },
 })

@@ -4,6 +4,9 @@ import Dashboard from './views/Dashboard.vue'
 import PersonalInformation from './views/PersonalInformation.vue'
 import Account from './views/Account.vue'
 import BunchAttributes from './views/BunchAttributes.vue'
+import Privacy from './views/Privacy.vue'
+import Terms from './views/Terms.vue'
+import Contact from './views/Contact.vue'
 import NotFound from './views/NotFound.vue'
 
 export const routes = [
@@ -24,6 +27,21 @@ export const routes = [
     path: '/attributes',
     component: BunchAttributes,
     meta: { title: 'Bunch Attributes' },
+  },
+  {
+    path: '/privacy',
+    component: Privacy,
+    meta: { title: 'Privacy' },
+  },
+  {
+    path: '/terms',
+    component: Terms,
+    meta: { title: 'Terms' },
+  },
+  {
+    path: '/contact',
+    component: Contact,
+    meta: { title: 'Contact' },
   },
   {
     path: '/:pathMatch(.*)*',

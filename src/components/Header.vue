@@ -5,7 +5,7 @@
   >
     <div class="md:container flex justify-between items-center mx-auto">
       <router-link
-        to="/"
+        to="/dashboard"
         class="sm:w-24 lg:w-32"
       >
         <img
@@ -44,15 +44,6 @@
         v-else
         class="flex items-center"
       >
-        <router-link
-          to="/dashboard"
-          class="sm:mr-2.5 md:mr-5"
-        >
-          <Button
-            title="Dashboard"
-            type="primary-bordered"
-          />
-        </router-link>
         <router-link to="/login">
           <Button
             title="Log Out"
@@ -88,12 +79,19 @@ export default defineComponent({
   },
   computed: {
     isWhiteHeader() {
-      return this.$route.fullPath === '/' ? true : false
+      return this.$route.fullPath === '/' 
+      || this.$route.fullPath === '/privacy'
+      || this.$route.fullPath === '/terms'
+      || this.$route.fullPath === '/contact'
+      ? true : false
     },
     generateHeaderClasses() {
       let headerClasses =
         'w-full sm:p-3 md:p-4 lg:px-8 lg:py-6 rounded-bl-3xl rounded-br-3xl'
-      this.$route.fullPath === '/'
+      this.$route.fullPath === '/' 
+      || this.$route.fullPath === '/privacy'
+      || this.$route.fullPath === '/terms'
+      || this.$route.fullPath === '/contact'
         ? (headerClasses += ' max-w-5xl mx-auto bg-white absolute left-2/4')
         : (headerClasses += ' max-w-none bg-black container')
       return headerClasses

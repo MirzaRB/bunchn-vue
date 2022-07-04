@@ -1,21 +1,9 @@
 <template>
   <div class="max-w-none min-h-screen min-w-full bg-white">
-    <div class="h-screen bg-hero-background bg-no-repeat bg-cover">
-      <div class="w-full max-w-screen-md mx-auto absolute left-2/4 bottom-2/4 video-container">
-        <Video
-          class="w-full"
-          :video-src="Video1"
-          :is-play="isPlay"
-          @on-play="playVideo"
-          @on-pause="pauseVideo"
-        />
-      </div>
-    </div>
+    <div class="h-screen min-h-half bg-hero-background bg-no-repeat bg-cover" />
     <div class="max-w-screen-md mx-auto py-16">
       <p class="font-mont text-center sm:text-2xl md:text-4xl lg:text-6xl font-normal">
-        We bring the
-        <span class="font-semibold text-secondary"> social </span>
-        to social media
+        Contact
       </p>
     </div>
     <div class="flex justify-center items-center pb-16">
@@ -89,8 +77,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import Video from '../components/Video.vue'
-
 import playStoreIcon from '../assets/play-store.png'
 import appStoreIcon from '../assets/app-store.png'
 import instaIcon from '../assets/instagram.svg'
@@ -98,11 +84,8 @@ import linkedInIcon from '../assets/linkedin.svg'
 import youtubeIcon from '../assets/youtube.svg'
 import tiktokIcon from '../assets/tiktok.svg'
 
-import Video1 from '../assets/video1.mp4'
-
 export default defineComponent({
   components: {
-    Video,
   },
   data() {
     return {
@@ -112,23 +95,7 @@ export default defineComponent({
       linkedInIcon,
       youtubeIcon,
       tiktokIcon,
-      Video1,
-      isPlay: false,
     }
-  },
-  methods: {
-    playVideo() {
-      this.isPlay = true
-    },
-    pauseVideo() {
-      this.isPlay = false
-    },
   },
 })
 </script>
-
-<style scoped>
-  .video-container {
-    transform: translateX(-50%);
-  }
-</style>
