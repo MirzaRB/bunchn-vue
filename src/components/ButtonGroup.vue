@@ -3,8 +3,8 @@
     <div
       v-for="(label, index) in group"
       :key="`button-${index + 1}`"
-      :class="`px-5 py-3 cursor-pointer ${activeIndex === index ? 'bg-secondary text-white rounded-lg' : ''}`"
-      @click="changeIndex(index)"
+      :class="`px-5 py-3 cursor-pointer ${activeIndex === index + 1 ? 'bg-secondary text-white rounded-lg' : ''}`"
+      @click="changeIndex(index + 1)"
     >
       {{ label }}
     </div>
@@ -19,7 +19,7 @@ import { globalState } from '../store'
 export default defineComponent({
   props: {
     group: {
-      type: Array as PropType<number[]>,
+      type: Array as PropType<string[]>,
       required: true,
       default() {
         return []
@@ -31,21 +31,21 @@ export default defineComponent({
       default: 0,
     },
   },
-  emits: ['on-press-page'],
-  methods: {
-    changePage(page: number) {
-      globalState.paginationData.currentPage = page
-    },
-  },
   emits: ['on-press'],
   data(){
     return {
-      activeIndex:0,
+      activeIndex: this.active,
     }
   },
+  watch: {
+    active(index) {
+      this.activeIndex = index
+    },
+  },
   methods:{
-    changeIndex(recIndex:number){
-      return this.activeIndex=recIndex
+    changeIndex(recIndex : any){
+      this.activeIndex = recIndex
+      globalState.paginationData.currentPage = recIndex
     },
   },
 })
